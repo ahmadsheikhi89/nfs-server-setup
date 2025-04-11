@@ -30,10 +30,9 @@ nfs-server-setup/
 ├── README.md                 # Documentation (this file)
 ├── LICENSE                   # Project license (MIT recommended)
 ├── .gitignore                # Ignore logs/temp files
-└── examples/                 # Sample configurations
-    ├── rsyslog.conf.sample
-    ├── hosts.sample
-    └── resolv.conf.sample
+├── hosts.sample              # Sample hosts file
+├── resolv.conf.sample        # Sample DNS resolver file
+├── rsyslog.conf.sample       # Sample rsyslog config
 ```
 
 ---
