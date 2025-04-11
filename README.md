@@ -26,6 +26,7 @@ This project provides a clean, professional, and educational Bash script to manu
 ```bash
 nfs-server-setup/
 ├── nfs-setup.sh              # Main interactive Bash script
+├── nfs-client-setup.sh       # Optional NFS client-side automation
 ├── README.md                 # Documentation (this file)
 ├── LICENSE                   # Project license (MIT recommended)
 ├── .gitignore                # Ignore logs/temp files
@@ -67,6 +68,59 @@ sudo ./nfs-setup.sh
 
 ---
 
+## 📦 Client Configuration (Mounting NFS)
+To mount the exported NFS share on a client (e.g. Rocky Linux, RHEL, or CentOS):
+
+### 📌 Option A: Manual Configuration
+
+**Step 1: Install required packages**
+```bash
+sudo dnf install -y nfs-utils
+```
+
+**Step 2: Create the mount directory**
+```bash
+sudo mkdir -p /mnt/nfsdata
+```
+
+**Step 3: Mount the share**
+```bash
+sudo mount -o rw,sync,noatime nfs-server01.corp.example.com:/nfsdata /mnt/nfsdata
+```
+
+**Make it persistent:**
+```bash
+echo "nfs-server01.corp.example.com:/nfsdata  /mnt/nfsdata  nfs  rw,sync,noatime  0  0" | sudo tee -a /etc/fstab
+```
+
+**SELinux adjustment (if enabled):**
+```bash
+sudo setsebool -P use_nfs_home_dirs 1
+```
+
+### 📌 Option B: Use Provided Script
+You can automate this process using the included script:
+```bash
+chmod +x nfs-client-setup.sh
+sudo ./nfs-client-setup.sh
+```
+This script will:
+- Install required packages
+- Create the mount point
+- Mount the remote NFS share
+- Add it to `/etc/fstab`
+- Configure SELinux for NFS
+
+---
+
+## ✅ Recommended Configuration:
+- Ensure DNS resolves the NFS server FQDN correctly.
+- Make sure the NFS ports are open on the client.
+- SELinux should allow NFS mounts (`setsebool -P use_nfs_home_dirs 1`).
+- Avoid mounting with `no_root_squash` unless needed.
+
+---
+
 ## 🧠 Educational Value
 This script is meant for:
 - Linux sysadmins looking to understand NFS setup deeply
@@ -80,6 +134,7 @@ This script is meant for:
 - SELinux is enforced.
 - All modifications are logged and confirmed.
 - Example user `utapp` is created with custom UID/GID.
+- Clients must be explicitly allowed in `/etc/exports`.
 
 ---
 
