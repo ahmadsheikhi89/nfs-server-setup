@@ -55,6 +55,8 @@ sudo ./nfs-setup.sh
 ```
 > You'll be prompted at each step. It's designed to be educational and interactive.
 
+> 🛠️ **Note:** Please customize the script to match your organization's infrastructure and security policies before using it in production environments.
+
 ---
 
 ## 📥 Example Output
