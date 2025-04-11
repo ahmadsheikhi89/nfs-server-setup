@@ -1,3 +1,5 @@
+![Banner](https://raw.githubusercontent.com/ahmadsheikhi89/nfs-server-setup/main/banner.png)
+
 # 📦 NFS Server Setup for Rocky Linux 9.5
 
 ![Shell Script](https://img.shields.io/badge/shell-bash-blue?logo=gnu-bash)
