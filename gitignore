@@ -1,0 +1,11 @@
+# Logs
+*.log
+
+# Swap files
+*.swp
+
+# Temporary files
+*~
+
+# Bash history
+.bash_history
