@@ -1,5 +1,10 @@
 # 📦 NFS Server Setup for Rocky Linux 9.5
 
+![Shell Script](https://img.shields.io/badge/shell-bash-blue?logo=gnu-bash)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![OS: Rocky Linux 9.5](https://img.shields.io/badge/OS-Rocky%20Linux%209.5-00bfff?logo=linux)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+
 This project provides a clean, professional, and educational Bash script to manually install and configure an **NFS Server** on **Rocky Linux 9.5**.
 
 ---
