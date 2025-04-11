@@ -1,0 +1,4 @@
+# Sample /etc/resolv.conf
+search corp.example.com
+nameserver 10.10.10.10
+nameserver 10.10.10.11

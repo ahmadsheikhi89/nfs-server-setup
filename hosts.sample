@@ -1,0 +1,2 @@
+# Sample /etc/hosts
+10.10.20.10   nfs-server01.corp.example.com nfs-server01

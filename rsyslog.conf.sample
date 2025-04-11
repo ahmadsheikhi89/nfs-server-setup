@@ -1,0 +1,3 @@
+# Sample rsyslog forwarding config
+*.* @syslog1.corp.example.com
+*.* @10.10.10.200
