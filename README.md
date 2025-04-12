@@ -1,13 +1,29 @@
 ![Banner](https://raw.githubusercontent.com/ahmadsheikhi89/nfs-server-setup/main/banner.png)
 
-# 📦 NFS Server Setup for Rocky Linux 9.5
+# 📦 NFS Server Setup for Rocky Linux 9.5 (NFSv3)
 
 ![Shell Script](https://img.shields.io/badge/shell-bash-blue?logo=gnu-bash)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![OS: Rocky Linux 9.5](https://img.shields.io/badge/OS-Rocky%20Linux%209.5-00bfff?logo=linux)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 
-This project provides a clean, professional, and educational Bash script to manually install and configure an **NFS Server** on **Rocky Linux 9.5**.
+> 📌 **Note:** This project is based on **NFSv3**. If you are looking for a modern and more secure configuration with **NFSv4**, check out the [NFSv4 version here](https://github.com/ahmadsheikhi89/nfs-server-setup-v4) *(coming soon)*.
+
+---
+
+## 🔄 NFSv3 vs NFSv4: Key Differences
+
+| Feature                      | NFSv3                          | NFSv4                            |
+|-----------------------------|--------------------------------|----------------------------------|
+| 🔐 Security & Identity       | Basic (UID/GID only)           | Supports strong identity mapping (idmapd) |
+| 🔥 Firewall simplicity       | Needs multiple ports open      | Single port (TCP 2049)           |
+| 📁 Mount behavior            | Absolute paths per export      | Relative paths under export root (fsid=0) |
+| 🧩 Extra daemons             | Needs `rpcbind`, `mountd`      | Doesn't require mountd           |
+| 🔐 SELinux interaction       | May need more exceptions       | Cleaner integration with SELinux |
+| 📡 Protocol type             | Stateless                      | Stateful with locking and delegation |
+
+> ✅ NFSv3 is suitable for simpler or mixed environments with older clients.
+> ✅ NFSv4 is recommended for modern, secure, and firewall-restricted setups.
 
 ---
 
